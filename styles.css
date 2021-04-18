@@ -1,0 +1,226 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  --video_title_weight: bold;
+  --video_title_size: 1.13em;
+  --channel_title: 14px;
+  --horizontal_color: rgb(90, 90, 90);
+  --search_button_color: hsl(0, 0%, 18.8%);
+  --nav_color: rgb(32, 32, 32);
+  --title_heading_color: rgb(248, 244, 248);
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: rgb(24, 24, 24);
+  width: 100%;
+  /* overflow-x: hidden; */
+  padding: 0 0.3em;
+}
+
+a {
+  text-decoration: none;
+  color: var(--title_heading_color);
+}
+
+.header_container {
+  height: 56px;
+  padding: 0 2em;
+  padding-top: 0.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.youtube_logo_container {
+  min-height: 24px;
+  min-width: 80px;
+  max-width: 80px;
+  max-height: 24px;
+}
+
+button {
+  border-style: none;
+  background: none;
+}
+
+.search_block {
+  display: flex;
+  background: #ffff;
+  width: 40%;
+  margin: 0 2em;
+}
+
+.search_bar {
+  height: 32px;
+  flex-grow: 1;
+  background: rgba(0, 0, 0, 1);
+  border-style: none;
+  font-size: 16px;
+  font-weight: 530;
+  padding: 0 0.5em;
+  color: #fff;
+}
+
+.search_bar:focus {
+  outline-color: rgb(58, 126, 252);
+  outline-style: solid;
+  -moz-outline-radius: 5px;
+  border-color: none;
+}
+
+button.search_icon {
+  width: 65px;
+  height: 32px;
+  background-color: rgb(46, 45, 45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button.search_icon:hover svg {
+  fill: rgb(119, 119, 119);
+  cursor: pointer;
+}
+
+button.search_icon svg {
+  fill: rgb(90, 90, 90);
+}
+
+.menu_container {
+  display: flex;
+}
+.menu_container button {
+  padding: 0.5em;
+  margin: 0 0.2em;
+}
+
+.menu_container img {
+  margin: 0 0.5em;
+}
+
+.specific_categories {
+  height: min-content;
+
+  padding: 1rem 2rem;
+}
+
+section.specific_categories_container {
+  /* background-color: var(--nav_color); */
+  color: var(--title_heading_color);
+  padding: 0.6rem 0.3rem;
+  border-top: 0.35px solid rgb(44, 44, 44);
+  border-bottom: 0.35px solid rgb(44, 44, 44);
+  overflow: hidden;
+  display: flex;
+  white-space: nowrap;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.specific_categories_container .all {
+  padding: 0.5em 0.95em;
+  font-size: var(--channel_title);
+  font-weight: var(--video_title_weight);
+  text-align: center;
+  background: rgb(44, 44, 44);
+  border-radius: 20px;
+  margin: 0 0.3em;
+  border: 1px solid var(--horizontal_color);
+  cursor: pointer;
+  transition: background-color 100ms ease-in-out;
+}
+
+.specific_categories .all:hover {
+  background-color: rgb(90, 90, 90);
+}
+
+.video_section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 3rem 2.59rem;
+  padding: 3rem 1.5rem;
+  margin: 0 1.45rem;
+  border-top: 4px solid var(--horizontal_color);
+}
+
+.video_section:first-child {
+  border-top: none;
+  padding-top: 0.5rem;
+}
+
+.thumbnail_image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-width: 250px;
+  min-height: 150px;
+  border-radius: 10px;
+}
+
+.thumbnail_image::before {
+  content: attr(data-duration);
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.65);
+  padding: 3px 4px;
+  border-radius: 2px;
+  color: white;
+  font-size: 0.85em;
+  bottom: 0;
+  right: 0;
+  font-weight: 500;
+  margin: 5px;
+}
+
+.channel_link > img {
+  border-radius: 50%;
+  margin: 0.3em 0.3em 0 0;
+}
+
+.channel_profile {
+  display: flex;
+}
+
+.video_block {
+  align-items: center;
+  /* background: #000; */
+}
+
+.video_channel {
+  width: 248px;
+  margin-left: 0.2em;
+  padding: 0.8em;
+  padding-right: 24px;
+  margin-top: -10px;
+  display: flex;
+  flex-direction: column;
+  justify-items: flex-start;
+}
+
+.video_title {
+  font-weight: var(--video_title_weight);
+  font-size: var(--video_title_size);
+}
+
+.channel_title,
+.view_upload {
+  font-size: var(--channel_title);
+  color: var(--horizontal_color);
+}
+
+.categorie_title {
+  grid-column: 1/-1;
+  color: var(--title_heading_color);
+  display: flex;
+  justify-content: space-between;
+  margin: -0.5em 0;
+  /* padding: 0 0.8em; */
+}
+
+.close_button {
+  padding-right: 0.3em;
+  cursor: pointer;
+}
